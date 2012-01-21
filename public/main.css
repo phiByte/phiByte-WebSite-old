@@ -3,10 +3,13 @@ body {
     margin: 0px;
     padding: 0px;
     font-size: 12pt;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 h1, h2, h3, h4, h5, h6, #logo, nav {
     font-family: 'Sorts Mill Goudy', sans-serif;
+    font-weight: normal;
 }
 
 p {
@@ -23,10 +26,11 @@ p {
     line-height: 29px;
     color: #444;
     text-indent: 8px;
+    text-align: center;
 }
 
 #logo hr {
-    margin: 0;
+    margin: 0 0 0 4px;
     background: #888;
     border: none;
     height: 1px;
@@ -52,24 +56,32 @@ nav a {
     min-height: 48px;
 }
 
+#inner {
+    width: 960px;
+    margin: 0px auto;
+    position: relative;
+    overflow: visible;
+}
+
 section {
     width: 940px;
     padding: 0px 10px;
     margin: auto;
     display: none;
-    position: relative;
+    position: absolute;
+    top: 0px;
+    left: 0px;
 }
 
-#page0 h1, #page0 h2 { color: #897; }
-#page1 h1, #page1 h2 { color: #A55; }
-#page2 h1, #page2 h2 { color: #E62; }
+#page0 h1, #page0 h2, .link-0.active { color: #897; }
+#page1 h1, #page1 h2, .link-1.active { color: #A55; }
+#page2 h1, #page2 h2, .link-2.active { color: #E62; }
 
 h1:first-line { color: #777; }
 
 h1, h2 {
     text-indent: -12px;
     padding-left: 8px;
-    font-weight: normal;
     font-size: 20pt;
     line-height: 120%;
 }
@@ -106,5 +118,32 @@ h1, h2 {
 .here-are-we .icon-0 { background-position: 0px   0px; }
 .here-are-we .icon-1 { background-position: 0px -24px; }
 .here-are-we .icon-2 { background-position: 0px -48px; }
+
+.person {
+    overflow: hidden;
+    margin: 8px 0px 24px;
+}
+
+.person img {
+    float: left;
+    margin: 0px 12px 4px 2px;
+    padding: 2px;
+    border-radius: 2px;
+    border: 1px solid #DDD;
+    box-shadow: 0px 0px 4px #EEE;
+}
+
+.person h3 {
+    margin: 6px 0px;
+}
+
+.person h3 span {
+    color: #CCC;
+}
+
+.person p {
+    margin: 2px 0px;
+    width: 512px;
+}
 
 /* </PAGE-0> */

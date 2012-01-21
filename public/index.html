@@ -1,5 +1,7 @@
+<!doctype html>
 <html>
     <head>
+        <meta charset="utf-8">
         <title>phiByte - We do </title>
         <link rel="icon" type="image/png" href="favicon.png" />
         <link rel="stylesheet" type="text/css" href="main.css" />
@@ -22,54 +24,96 @@
         </div>
         
         <nav>
-            <a href="#page0">Vi</a>
-            <a href="#page1">Våra jobb</a>
-            <a href="#page2">Våra tankar</a>
+            <a href="#page0" class="link-0">Vi</a>
+            <a href="#page1" class="link-1">Våra jobb</a>
+            <a href="#page2" class="link-2">Våra tankar</a>
         </nav>
         
         <div id="content">
-            
-            <section id="page0"></section>
-            <section id="page1"></section>
-            <section id="page2"></section>
-            
+            <div id="inner">
+                
+                <section id="page0"></section>
+                <section id="page1"></section>
+                <section id="page2"></section>
+                
+            </div>
         </div>
         
         <script type="text/javascript">
             $(function () {
                 
+                var $current = null;
                 var $content = $('#content');
                 var $pages = $content.children('section');
+                var $logo = $('#logo');
+                var $nav = $('nav');
+                
+                var hide = function () { $(this).hide(); };
                 
                 $('#page0').load('page0.html');
                 $('#page1').load('page1.html');
                 $('#page2').load('page2.html');
                 
-                var current = null;
-                
                 $('nav a').on('click', function (e) {
                     
                     e.preventDefault();
                     
+                    $nav.find('a').removeClass('active');
+                    $(this).addClass('active');
+                    
                     var $page = $($(this).attr('href'));
                     
-                    if(current === null) {
+                    if($page.is($current)) {
+                        
+                        $(this).removeClass('active');
+                        
+                        $logo
+                            .animate({ 'margin-top': $logo.data('top') });
+                        
+                        $page
+                            .animate({ 'opacity': 0 }, hide);
                         
                         $content
-                            .css('margin-top', $(window).height() - $('nav').offset().top)
+                            .animate({ 'margin-top': $(window).height() + $(window).scrollTop() - $nav.offset().top + $logo.data('top') - 12 }, hide);
+                        
+                        $page = null;
+                        
+                    } else if($current === null) {
+                        
+                        $content
+                            .css('margin-top', $(window).height() + $(window).scrollTop() - $nav.offset().top)
                             .css('display', 'block')
                             .animate({ 'margin-top': 12 });
                         
-                        $page.show();
+                        $logo
+                            .data('top', $logo.offset().top)
+                            .css('margin-top', $logo.data('top'))
+                            .animate({ 'margin-top': 12 });
+                        
+                        $page
+                            .css('left', 0)
+                            .css('opacity', 1)
+                            .show();
                         
                     } else {
                         
-                        current.slideUp();
-                        $page.slideDown();
+                        var dir = (
+                            parseInt($current.attr('id').substring(4)) -
+                            parseInt($page.attr('id').substring(4))
+                        );
+                        
+                        $current
+                            .animate({ 'left': dir * 960, 'opacity': 0 }, hide);
+                        
+                        $page
+                            .css('opacity', 0)
+                            .css('left', dir * -960)
+                            .css('display', 'block')
+                            .animate({ 'left': 0, 'opacity': 1 });
                         
                     }
                     
-                    current = $page;
+                    $current = $page;
                     
                 });
                 
