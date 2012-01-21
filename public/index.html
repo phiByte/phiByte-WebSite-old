@@ -2,47 +2,79 @@
     <head>
         <title>phiByte - We do </title>
         <link rel="icon" type="image/png" href="favicon.png" />
-        
-        <style>
-            body {
-                margin-top: -15%;
+        <link rel="stylesheet" type="text/css" href="main.css" />
+        <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+        <style type="text/css">
+            @font-face {
+                font-family: 'Sorts Mill Goudy';
+                font-style: normal;
+                font-weight: 400;
+                src: local('Sorts Mill Goudy Regular'), local('SortsMillGoudy-Regular'), url('http://themes.googleusercontent.com/static/fonts/sortsmillgoudy/v3/JzRrPKdwEnE8F1TDmDLMUtsZ51dqzBwIdH2JuTl9mv4.woff') format('woff');
             }
-            
-            #push {
-                height:15%;
-            }
-            
-            #logo {
-                width: 100px;
-                height: 500px;
-                margin: 15% auto;
-                font-size:24px;
-                background: url('/favicon.png') top left no-repeat;
-                background-size: 60px;
-                padding-left: 65px;
-                padding-top: 16px;
-                line-height: 28px;
-                color: #444;
-                text-indent: 8px;
-            }
-            #logo hr {
-                margin: 0;
-                background: #888;
-                border: none;
-                height: 1px;
-                box-shadow: 1px 0 1px #777;
-            }
-            
         </style>
-        
     </head>
     <body>
-        <div id="push"></div>
         
         <div id="logo">
             phiByte
             <hr />
             Leve stil.
         </div>
+        
+        <nav>
+            <a href="#page0">Vi</a>
+            <a href="#page1">Våra jobb</a>
+            <a href="#page2">Våra tankar</a>
+        </nav>
+        
+        <div id="content">
+            
+            <section id="page0"></section>
+            <section id="page1"></section>
+            <section id="page2"></section>
+            
+        </div>
+        
+        <script type="text/javascript">
+            $(function () {
+                
+                var $content = $('#content');
+                var $pages = $content.children('section');
+                
+                $('#page0').load('page0.html');
+                $('#page1').load('page1.html');
+                $('#page2').load('page2.html');
+                
+                var current = null;
+                
+                $('nav a').on('click', function (e) {
+                    
+                    e.preventDefault();
+                    
+                    var $page = $($(this).attr('href'));
+                    
+                    if(current === null) {
+                        
+                        $content
+                            .css('margin-top', $(window).height() - $('nav').offset().top)
+                            .css('display', 'block')
+                            .animate({ 'margin-top': 12 });
+                        
+                        $page.show();
+                        
+                    } else {
+                        
+                        current.slideUp();
+                        $page.slideDown();
+                        
+                    }
+                    
+                    current = $page;
+                    
+                });
+                
+            });
+        </script>
+        
     </body>
 </html>
