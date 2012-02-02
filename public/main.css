@@ -125,6 +125,8 @@ h1, h2 {
 }
 
 .person img {
+    width: 152px;
+    height: 134px;
     float: left;
     margin: 0px 12px 4px 2px;
     padding: 2px;
