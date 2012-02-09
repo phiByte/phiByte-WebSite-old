@@ -34,12 +34,11 @@ p {
 }
 
 #logo hr {
-	width:130px;
-    margin: 0 auto;
+	width: 117px;
+    margin: 1px 0 0 25px;
     background: #888;
     border: none;
     height: 1px;
-    box-shadow: 1px 0 1px #777;
 }
 
 nav {
