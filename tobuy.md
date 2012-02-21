@@ -10,4 +10,4 @@
 * Skrivbord, EXPEDIT [ref](http://www.ikea.com/se/sv/catalog/products/S99861340/)
 
 ##Low priority
-* Robotardamsugare och -golvtvättare [ref](http://www.robotexperten.se/83-roomba-581-scooba.html)
+* Robotdammsugare och -golvtvättare [ref](http://www.robotexperten.se/83-roomba-581-scooba.html)
