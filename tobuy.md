@@ -1,9 +1,13 @@
 #Att köpa i phiByte AB
 
 ##High priority
-Lakan till bäddsoffan
-Tre stycken handdukar till köket
+* Lakan, täcke och kudde till bäddsoffan
+* Tre stycken handdukar till köket
+
 ##Medium priorit
-Hatthylla
+* Hatthylla, TJUSIG [ref](http://www.ikea.com/se/sv/catalog/products/40152633/)
+* Skohylla, TJUSIG [ref](http://www.ikea.com/se/sv/catalog/products/30152638/)
+* Skrivbord, EXPEDIT [ref](http://www.ikea.com/se/sv/catalog/products/S99861340/)
+
 ##Low priority
-Robotdammsugara (Roomba & Scooba)
+* Robotardamsugare och -golvtvättare [ref](http://www.robotexperten.se/83-roomba-581-scooba.html)
