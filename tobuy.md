@@ -1,8 +1,9 @@
 #Att köpa i phiByte AB
 
-##HP
+##High priority
+Lakan till bäddsoffan
 Tre stycken handdukar till köket
-##MP
+##Medium priorit
 Hatthylla
-##LP
+##Low priority
 Robotdammsugara (Roomba & Scooba)
