@@ -57,6 +57,7 @@ nav a {
     background: -webkit-linear-gradient(top, #F9F9F9 0px, #FFF 48px);
     padding-top: 12px;
     display: none;
+    text-align: justify;
     min-height: 48px;
 }
 
